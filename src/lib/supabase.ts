@@ -12,11 +12,11 @@ if (!supabaseAnonKey) {
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-export const supabaseAdmin = createClient(
-  supabaseUrl,
-  supabaseServiceKey ?? supabaseAnonKey,
-  supabaseServiceKey ? { auth: { autoRefreshToken: false, persistSession: false } } : {}
-);
+const adminKey = supabaseServiceKey && supabaseServiceKey.trim() ? supabaseServiceKey : supabaseAnonKey;
+const adminOptions = supabaseServiceKey && supabaseServiceKey.trim()
+  ? { auth: { autoRefreshToken: false, persistSession: false } }
+  : {};
+export const supabaseAdmin = createClient(supabaseUrl, adminKey, adminOptions);
 
 export type MenuItem = {
   id: string; name: string; description: string; price: number;

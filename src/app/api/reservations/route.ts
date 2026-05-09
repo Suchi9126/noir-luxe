@@ -7,7 +7,8 @@ const MAX_PER_SLOT = 6;
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, date, time_slot, guest_count, special_requests } = body;
+    const { name, email, phone, date, time_slot, guest_count, special_requests, brand_slug: brandSlug } = body;
+    if (!brandSlug) return NextResponse.json({ error: "brand_slug is required" }, { status: 400 });
 
     // Validation
     if (!name?.trim()) return NextResponse.json({ error: "Name is required" }, { status: 400 });
@@ -22,6 +23,7 @@ export async function POST(req: NextRequest) {
     const { count } = await supabaseAdmin
       .from("reservations")
       .select("*", { count: "exact", head: true })
+      .eq("brand_slug", brandSlug)
       .eq("date", date)
       .eq("time_slot", time_slot)
       .neq("status", "rejected")
@@ -34,7 +36,7 @@ export async function POST(req: NextRequest) {
     // Insert reservation
     const { data, error } = await supabaseAdmin
       .from("reservations")
-      .insert({ name: name.trim(), email: email.trim().toLowerCase(), phone: phone.trim(), date, time_slot, guest_count: Number(guest_count), special_requests: special_requests?.trim() || "" })
+      .insert({ name: name.trim(), email: email.trim().toLowerCase(), phone: phone.trim(), date, time_slot, guest_count: Number(guest_count), special_requests: special_requests?.trim() || "", brand_slug: brandSlug })
       .select("id, name, date, time_slot, guest_count")
       .single();
 
@@ -56,8 +58,15 @@ export async function GET(req: NextRequest) {
   const page = Number(searchParams.get("page") || 1);
   const limit = Number(searchParams.get("limit") || 20);
   const status = searchParams.get("status");
+  const brandSlug = searchParams.get("brand_slug");
+  if (!brandSlug) return NextResponse.json({ error: "brand_slug is required" }, { status: 400 });
 
-  let query = supabaseAdmin.from("reservations").select("*", { count: "exact" }).order("date", { ascending: false }).range((page - 1) * limit, page * limit - 1);
+  let query = supabaseAdmin
+    .from("reservations")
+    .select("*", { count: "exact" })
+    .eq("brand_slug", brandSlug)
+    .order("date", { ascending: false })
+    .range((page - 1) * limit, page * limit - 1);
   if (status) query = query.eq("status", status);
 
   const { data, error, count } = await query;

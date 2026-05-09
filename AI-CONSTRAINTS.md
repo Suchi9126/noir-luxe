@@ -19,6 +19,10 @@ This is a multi-brand landing page SaaS built with:
 - ALL components must accept brand config as props
 - Adding a new brand = only create one new file in src/brands/ + seed Supabase
 - NEVER create separate pages or components per brand
+- NEVER commit .env.local to git.
+- .env.local must stay local on the developer machine only.
+- Use Vercel Environment Variables for production secrets.
+- If a file named .env.local is already tracked by git, remove it from tracking but keep it locally.
 
 ### Supabase
 - ONE Supabase project serves ALL brands

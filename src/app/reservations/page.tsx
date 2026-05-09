@@ -2,6 +2,9 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getAllSlugs } from "@/lib/getBrand";
+
+const DEFAULT_BRAND_SLUG = getAllSlugs()[0] || "";
 
 const timeSlots = ["7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM"];
 type FormState = { name: string; email: string; phone: string; date: string; time: string; guests: number; requests: string; };
@@ -39,7 +42,16 @@ export default function ReservationsPage() {
       const res = await fetch("/api/reservations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: form.name, email: form.email, phone: form.phone, date: form.date, time_slot: form.time, guest_count: form.guests, special_requests: form.requests }),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          date: form.date,
+          time_slot: form.time,
+          guest_count: form.guests,
+          special_requests: form.requests,
+          brand_slug: DEFAULT_BRAND_SLUG,
+        }),
       });
       const data = await res.json();
       if (!res.ok) { setApiError(data.error || "Something went wrong."); setStatus("error"); return; }

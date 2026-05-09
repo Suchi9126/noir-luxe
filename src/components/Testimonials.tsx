@@ -7,7 +7,7 @@ const fallbackTestimonials = [
   { id: "3", customer_name: "Aiko Tanaka", location: "Tokyo", review: "Noir & Co. has ruined all other restaurants for me. The tasting menu was a journey I did not want to end.", rating: 5 },
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ brandSlug }: { brandSlug?: string }) {
   const [visible, setVisible] = useState(false);
   const [testimonials, setTestimonials] = useState(fallbackTestimonials);
   const ref = useRef<HTMLDivElement>(null);
@@ -19,11 +19,13 @@ export default function Testimonials() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/testimonials")
+    if (!brandSlug) return;
+    const query = `?brand_slug=${encodeURIComponent(brandSlug)}`;
+    fetch(`/api/testimonials${query}`)
       .then(r => r.ok ? r.json() : null)
       .then(d => { if (d?.data?.length > 0) setTestimonials(d.data); })
       .catch(() => {});
-  }, []);
+  }, [brandSlug]);
 
   return (
     <>
