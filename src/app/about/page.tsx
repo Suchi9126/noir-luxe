@@ -69,10 +69,6 @@ export default function AboutPage() {
 
       {/* Story Split */}
       <section ref={s2.ref} style={{ padding: "4rem 2rem 6rem", maxWidth: "1200px", margin: "0 auto" }}>
-        <style>{`
-          .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-          @media (max-width: 768px) { .about-split { grid-template-columns: 1fr; gap: 3rem; } }
-        `}</style>
         <div className="about-split">
           <div style={{ opacity: s2.v ? 1 : 0, transform: s2.v ? "translateX(0)" : "translateX(-40px)", transition: "all 1s ease 0.2s" }}>
             <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80"
@@ -127,11 +123,6 @@ export default function AboutPage() {
 
       {/* Team Grid */}
       <section ref={s4.ref} style={{ padding: "6rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
-        <style>{`
-          .team-grid { grid-template-columns: repeat(4, 1fr); }
-          @media (max-width: 900px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
-          @media (max-width: 500px) { .team-grid { grid-template-columns: 1fr 1fr; gap: 1rem; } }
-        `}</style>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <p style={{ color: "#C9A96E", fontFamily: "sans-serif", fontSize: "0.7rem", letterSpacing: "0.4em", textTransform: "uppercase", marginBottom: "1rem", opacity: s4.v ? 1 : 0, transition: "opacity 0.8s ease" }}>The People</p>
           <h2 style={{ color: "#F5F0E8", fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "clamp(2rem, 4vw, 2.8rem)", fontWeight: 300, opacity: s4.v ? 1 : 0, transition: "opacity 0.8s ease 0.2s" }}>Our Team</h2>

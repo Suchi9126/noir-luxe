@@ -70,10 +70,6 @@ export default function ReservationsPage() {
       </section>
 
       <section style={{ padding: "5rem 2rem", maxWidth: "1200px", margin: "0 auto" }}>
-        <style>{`
-          .res-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
-          @media (max-width: 900px) { .res-layout { grid-template-columns: 1fr; gap: 3rem; } }
-        `}</style>
         <div className="res-layout">
           <div style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(-30px)", transition: "all 1s ease 0.4s" }}>
             <p style={{ color: "#C9A96E", fontFamily: "sans-serif", fontSize: "0.7rem", letterSpacing: "0.4em", textTransform: "uppercase", marginBottom: "1.5rem" }}>Reserve</p>

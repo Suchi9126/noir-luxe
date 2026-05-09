@@ -4,15 +4,6 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <style>{`
-        .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; }
-        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
-        @media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
-        .footer-bottom { flex-direction: row; }
-        @media (max-width: 600px) { .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; } }
-        .footer-section { padding: 4rem 2rem 2rem; }
-        @media (min-width: 768px) { .footer-section { padding: 5rem 4rem 2rem; } }
-      `}</style>
       <footer className="footer-section" style={{ background: "#080808", borderTop: "1px solid rgba(201,169,110,0.12)" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div className="footer-grid" style={{ display: "grid", marginBottom: "3rem" }}>

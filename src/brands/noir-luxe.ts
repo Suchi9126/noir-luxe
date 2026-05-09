@@ -1,0 +1,47 @@
+export const brand = {
+  slug: "noir-luxe",
+  name: "Noir Luxe",
+  tagline: "An Evening Beyond Ordinary",
+  type: "restaurant",
+  accentColor: "#D4AF37",
+  accentColorDark: "#b8982e",
+  bgColor: "#0A0A0A",
+  phone: "+91 98765 43210",
+  location: "Bengaluru, Karnataka",
+  instagram: "@noirluxe",
+  website: "noirluxe.com",
+  offerBanner: "15% off your first reservation — use code NOIR15",
+  heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800&q=80",
+  galleryImages: [
+    "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
+    "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
+    "https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=800&q=80",
+    "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80",
+    "https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=800&q=80",
+    "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=800&q=80",
+  ],
+  menuHighlights: [
+    { name: "Truffle Risotto", desc: "Black truffle, aged parmesan, wild herbs", price: "₹1,850", image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80" },
+    { name: "Wagyu Tenderloin", desc: "A5 wagyu, bone marrow butter, microgreens", price: "₹4,200", image: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" },
+    { name: "Lobster Bisque", desc: "Maine lobster, saffron cream, caviar", price: "₹2,400", image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" },
+  ],
+  testimonials: [
+    { name: "Aanya Sharma", text: "The most exquisite dining experience in Bengaluru. Every dish is a masterpiece.", rating: 5 },
+    { name: "Rahul Menon", text: "Celebrated our anniversary here — the ambience and food were absolutely magical.", rating: 5 },
+    { name: "Priya Iyer", text: "Service is impeccable. The truffle risotto alone is worth the visit.", rating: 5 },
+  ],
+  whatsappActions: [
+    { label: "Book a table for tonight", emoji: "🍽️" },
+    { label: "Private dining enquiry", emoji: "🕯️" },
+    { label: "Corporate event booking", emoji: "🏢" },
+    { label: "View menu", emoji: "👨‍🍳" },
+  ],
+  stats: [
+    { value: "8+", label: "Years of Excellence" },
+    { value: "50K+", label: "Happy Guests" },
+    { value: "120+", label: "Signature Dishes" },
+    { value: "4.9★", label: "Average Rating" },
+  ],
+  marqueeItems: ["Fine Dining", "Private Events", "Chef's Table", "Wine Pairing", "Live Jazz", "Rooftop Seating"],
+};
+export type Brand = typeof brand;

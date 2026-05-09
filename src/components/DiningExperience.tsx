@@ -26,12 +26,6 @@ export default function DiningExperience() {
 
   return (
     <>
-      <style>{`
-        .exp-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-        @media (max-width: 900px) { .exp-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
-        .exp-section { padding: 6rem 2rem; }
-        @media (min-width: 768px) { .exp-section { padding: 8rem 4rem; } }
-      `}</style>
       <section ref={ref} className="exp-section" style={{ background: "#0A0A0A" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div style={{ marginBottom: "4rem", opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: "all 0.8s ease" }}>
@@ -74,10 +68,6 @@ export default function DiningExperience() {
             </div>
           </div>
         </div>
-        <style>{`
-          @keyframes expandBar { from { width: 0; } to { width: 100%; } }
-          @keyframes fadeIn { from { opacity: 0; transform: scale(1.02); } to { opacity: 1; transform: scale(1); } }
-        `}</style>
       </section>
     </>
   );

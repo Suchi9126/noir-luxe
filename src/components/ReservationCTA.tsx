@@ -14,12 +14,6 @@ export default function ReservationCTA() {
 
   return (
     <>
-      <style>{`
-        .cta-btns { flex-direction: row; }
-        @media (max-width: 550px) { .cta-btns { flex-direction: column; align-items: center; } }
-        .cta-section { padding: 8rem 2rem; }
-        @media (min-width: 768px) { .cta-section { padding: 10rem 4rem; } }
-      `}</style>
       <section ref={ref} style={{ position: "relative", overflow: "hidden" }}>
         <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1920&q=80"
           alt="Private dining" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />

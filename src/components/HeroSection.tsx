@@ -8,18 +8,6 @@ export default function HeroSection() {
 
   return (
     <>
-      <style>{`
-        .hero-title { font-size: clamp(2.8rem, 8vw, 7rem); }
-        .hero-subtitle { font-size: clamp(0.8rem, 2vw, 1rem); }
-        .hero-btns { flex-direction: row; }
-        .hero-stats { gap: 3rem; }
-        .hero-stat-num { font-size: 1.8rem; }
-        @media (max-width: 600px) {
-          .hero-btns { flex-direction: column; align-items: center; }
-          .hero-stats { gap: 1.5rem; }
-          .hero-stat-num { font-size: 1.4rem; }
-        }
-      `}</style>
       <section style={{ position: "relative", height: "100vh", width: "100%", overflow: "hidden" }}>
         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=80"
           alt="Luxury dining"

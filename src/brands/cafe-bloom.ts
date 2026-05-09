@@ -1,0 +1,47 @@
+export const brand = {
+  slug: "cafe-bloom",
+  name: "Café Bloom",
+  tagline: "Where Every Cup Tells a Story",
+  type: "cafe",
+  accentColor: "#e07b4f",
+  accentColorDark: "#c4623a",
+  bgColor: "#0f0a08",
+  phone: "+91 98765 00000",
+  location: "Koramangala, Bengaluru",
+  instagram: "@cafebloom",
+  website: "cafebloom.in",
+  offerBanner: "Buy 1 Get 1 free on all cold brews — this week only",
+  heroImage: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1800&q=80",
+  galleryImages: [
+    "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+    "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80",
+    "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80",
+    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
+    "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=80",
+    "https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=800&q=80",
+  ],
+  menuHighlights: [
+    { name: "Cold Brew Flight", desc: "Four seasonal cold brews, tasting notes included", price: "₹420", image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" },
+    { name: "Avocado Toast", desc: "Sourdough, smashed avo, poached egg, chilli flakes", price: "₹320", image: "https://images.unsplash.com/photo-1588137378633-dea1336ce1e2?w=600&q=80" },
+    { name: "Bloom Latte", desc: "Signature rose & cardamom latte, oat milk", price: "₹280", image: "https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=600&q=80" },
+  ],
+  testimonials: [
+    { name: "Sneha Reddy", text: "My favourite spot to work from. The cold brew is unmatched in the city.", rating: 5 },
+    { name: "Karan Nair", text: "Beautiful ambience and the bloom latte is absolutely dreamy.", rating: 5 },
+    { name: "Divya Pillai", text: "Best avocado toast I have ever had. Staff is so warm and welcoming.", rating: 5 },
+  ],
+  whatsappActions: [
+    { label: "Reserve a table", emoji: "☕" },
+    { label: "Ask about today's specials", emoji: "🌸" },
+    { label: "Corporate order enquiry", emoji: "🏢" },
+    { label: "View our brew menu", emoji: "📋" },
+  ],
+  stats: [
+    { value: "3+", label: "Years Brewing" },
+    { value: "20K+", label: "Happy Customers" },
+    { value: "40+", label: "Brew Varieties" },
+    { value: "4.8★", label: "Average Rating" },
+  ],
+  marqueeItems: ["Specialty Coffee", "Cold Brews", "Brunch", "Work-Friendly", "Live Music", "Outdoor Seating"],
+};
+export type Brand = typeof brand;

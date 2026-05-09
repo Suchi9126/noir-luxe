@@ -42,12 +42,6 @@ export default function StatsBanner() {
 
   return (
     <>
-      <style>{`
-        .stats-grid { grid-template-columns: repeat(4, 1fr); }
-        @media (max-width: 700px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-        .stats-section { padding: 5rem 2rem; }
-        @media (min-width: 768px) { .stats-section { padding: 6rem 4rem; } }
-      `}</style>
       <section ref={ref} className="stats-section" style={{ background: "#0D0D0D", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.04) 0%, transparent 60%), radial-gradient(circle at 80% 50%, rgba(201,169,110,0.04) 0%, transparent 60%)" }} />
         <div className="stats-grid" style={{ display: "grid", maxWidth: "1200px", margin: "0 auto", position: "relative" }}>

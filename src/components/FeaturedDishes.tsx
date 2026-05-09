@@ -23,13 +23,6 @@ export default function FeaturedDishes() {
 
   return (
     <>
-      <style>{`
-        .dishes-grid { grid-template-columns: repeat(3, 1fr); }
-        @media (max-width: 900px) { .dishes-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 500px) { .dishes-grid { grid-template-columns: 1fr; } }
-        .dishes-section { padding: 6rem 2rem; }
-        @media (min-width: 768px) { .dishes-section { padding: 8rem 4rem; } }
-      `}</style>
       <section ref={ref} className="dishes-section" style={{ background: "#0D0D0D" }}>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <p style={{ color: "#C9A96E", fontFamily: "sans-serif", fontSize: "0.7rem", letterSpacing: "0.4em", textTransform: "uppercase", marginBottom: "1rem", opacity: visible ? 1 : 0, transition: "opacity 0.8s ease" }}>Signature Dishes</p>

@@ -54,20 +54,6 @@ export default function AdminDashboard() {
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "#0A0A0A", fontFamily: "sans-serif" }}>
-      <style>{`
-        .admin-sidebar { width: 240px; flex-shrink: 0; }
-        .admin-main { flex: 1; min-width: 0; }
-        .kpi-grid { grid-template-columns: repeat(4, 1fr); }
-        .admin-mobile-bar { display: none; }
-        @media (max-width: 900px) {
-          .admin-sidebar { display: none; }
-          .admin-mobile-bar { display: flex; position: sticky; top: 0; z-index: 50; background: #111; border-bottom: 1px solid rgba(201,169,110,0.15); padding: 0.75rem 1rem; gap: 0.4rem; overflow-x: auto; }
-          .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 500px) { .kpi-grid { grid-template-columns: 1fr 1fr; } }
-        .res-table { width: 100%; overflow-x: auto; display: block; }
-      `}</style>
-
       {/* Sidebar — Desktop */}
       <aside className="admin-sidebar" style={{ background: "#0D0D0D", borderRight: "1px solid rgba(201,169,110,0.1)", padding: "2rem 0", position: "sticky", top: 0, height: "100vh", overflowY: "auto" }}>
         <div style={{ padding: "0 1.5rem 2rem", borderBottom: "1px solid rgba(201,169,110,0.1)" }}>

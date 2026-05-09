@@ -1,15 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MenuClient from "@/components/MenuClient";
+import { getMenuItems } from "@/lib/data";
 
-async function getMenuItems() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL ? `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/menu` : 'http://localhost:3000/api/menu'}`, { next: { revalidate: 60 } });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return data.data || [];
-  } catch { return []; }
-}
+export const revalidate = 60;
 
 export default async function MenuPage() {
   const items = await getMenuItems();

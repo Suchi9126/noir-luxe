@@ -13,16 +13,6 @@ export default function ChefSpotlight() {
 
   return (
     <>
-      <style>{`
-        .chef-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
-        .chef-badge { right: -3rem; }
-        @media (max-width: 900px) {
-          .chef-grid { grid-template-columns: 1fr; gap: 3rem; }
-          .chef-badge { right: 1rem; }
-        }
-        .chef-section { padding: 6rem 2rem; }
-        @media (min-width: 768px) { .chef-section { padding: 8rem 4rem; } }
-      `}</style>
       <section ref={ref} className="chef-section" style={{ background: "#111", overflow: "hidden" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div className="chef-grid">

@@ -12,11 +12,6 @@ export default function FloatingCTA() {
 
   return (
     <>
-      <style>{`
-        .float-cta { display: none; }
-        @media (max-width: 768px) { .float-cta { display: flex; } }
-        @keyframes floatIn { from { transform: translateY(80px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-      `}</style>
       <div className="float-cta" style={{
         position: "fixed", bottom: "1.5rem", left: "1rem", right: "1rem", zIndex: 200,
         animation: show ? "floatIn 0.5s ease forwards" : "none",
