@@ -1,4 +1,6 @@
-export const brand = {
+import type { Brand } from "@/types/brand";
+
+export const brand: Brand = {
   slug: "cafe-bloom",
   name: "Café Bloom",
   tagline: "Where Every Cup Tells a Story",
@@ -43,5 +45,18 @@ export const brand = {
     { value: "4.8★", label: "Average Rating" },
   ],
   marqueeItems: ["Specialty Coffee", "Cold Brews", "Brunch", "Work-Friendly", "Live Music", "Outdoor Seating"],
+  theme: {
+    accentColor: "#E07B4F",
+    accentColorDark: "#C4623A",
+    backgroundColor: "#0F0A08",
+    surfaceColor: "#1C1411",
+    textColor: "#F5EEE7",
+    textMuted: "#A89E92",
+    fontDisplay: "Cormorant Garamond",
+    fontBody: "Helvetica Neue",
+    heroOverlay: "linear-gradient(to bottom, rgba(15,10,8,0.35), rgba(15,10,8,0.85))",
+    sectionSpacing: "balanced",
+    buttonStyle: "solid",
+    cardStyle: "dark",
+  },
 };
-export type Brand = typeof brand;

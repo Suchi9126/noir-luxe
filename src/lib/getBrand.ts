@@ -1,8 +1,10 @@
 import { brand as noirLuxe } from "@/brands/noir-luxe";
+import { brand as cafeBloom } from "@/brands/cafe-bloom";
 import { brand as salonAurora } from "@/brands/salon-aurora";
 
 const brands = {
   "noir-luxe": noirLuxe,
+  "cafe-bloom": cafeBloom,
   "salon-aurora": salonAurora,
 };
 

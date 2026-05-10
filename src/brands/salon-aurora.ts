@@ -1,4 +1,6 @@
-export const brand = {
+import type { Brand } from "@/types/brand";
+
+export const brand: Brand = {
   slug: "salon-aurora",
   name: "Salon Aurora",
   tagline: "Where Beauty Meets Artistry",
@@ -79,5 +81,17 @@ export const brand = {
     "Threading",
     "Hair Spa",
   ],
+  theme: {
+    accentColor: "#B76E79",
+  accentColorDark: "#8E4E58",
+  backgroundColor: "#FAF6F1",
+  surfaceColor: "#F3EAE3",
+  textColor: "#241A18",
+  textMuted: "#7D6761",
+  fontDisplay: "Cormorant Garamond",
+  fontBody: "Helvetica Neue",
+  heroOverlay: "linear-gradient(to bottom, rgba(250,246,241,0.08), rgba(250,246,241,0.72))",
+  sectionSpacing: "generous",
+  buttonStyle: "solid",
+  cardStyle: "light",  },
 };
-export type Brand = typeof brand;

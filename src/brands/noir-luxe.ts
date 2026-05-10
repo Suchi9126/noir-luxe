@@ -1,4 +1,6 @@
-export const brand = {
+import type { Brand } from "@/types/brand";
+
+export const brand: Brand = {
   slug: "noir-luxe",
   name: "Noir Luxe",
   tagline: "An Evening Beyond Ordinary",
@@ -43,5 +45,18 @@ export const brand = {
     { value: "4.9★", label: "Average Rating" },
   ],
   marqueeItems: ["Fine Dining", "Private Events", "Chef's Table", "Wine Pairing", "Live Jazz", "Rooftop Seating"],
+  theme: {
+    accentColor: "#C9A84C",
+    accentColorDark: "#A07830",
+    backgroundColor: "#0D0D0D",
+    surfaceColor: "#1A1814",
+    textColor: "#F2EFE8",
+    textMuted: "#A09A8E",
+    fontDisplay: "Cormorant Garamond",
+    fontBody: "Helvetica Neue",
+    heroOverlay: "linear-gradient(to bottom, rgba(13,13,13,0.3), rgba(13,13,13,0.85))",
+    sectionSpacing: "spacious",
+    buttonStyle: "solid",
+    cardStyle: "dark",
+  },
 };
-export type Brand = typeof brand;
