@@ -8,7 +8,7 @@ export const brand: Brand = {
   accentColor: "#D4AF37",
   accentColorDark: "#b8982e",
   bgColor: "#0A0A0A",
-  phone: "+91 98765 43210",
+  phone: "+918431511356",
   location: "Bengaluru, Karnataka",
   instagram: "@noirluxe",
   website: "noirluxe.com",

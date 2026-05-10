@@ -8,7 +8,7 @@ export const brand: Brand = {
   accentColor: "#e07b4f",
   accentColorDark: "#c4623a",
   bgColor: "#0f0a08",
-  phone: "+91 98765 00000",
+  phone: "+918431511356",
   location: "Koramangala, Bengaluru",
   instagram: "@cafebloom",
   website: "cafebloom.in",
