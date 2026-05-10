@@ -1,8 +1,8 @@
-import { supabaseAdmin } from "./supabase";
+import { supabase } from "./supabase";
 
 export async function getMenuItems(brandSlug: string, category?: string, featured?: boolean) {
   if (!brandSlug) return [];
-  let query = supabaseAdmin
+  let query = supabase
     .from("menu_items")
     .select("*")
     .eq("brand_slug", brandSlug)
@@ -19,7 +19,7 @@ export async function getMenuItems(brandSlug: string, category?: string, feature
 
 export async function getTestimonials(brandSlug: string) {
   if (!brandSlug) return [];
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await supabase
     .from("testimonials")
     .select("*")
     .eq("brand_slug", brandSlug)
@@ -31,7 +31,7 @@ export async function getTestimonials(brandSlug: string) {
 
 export async function getGalleryItems(brandSlug: string, category?: string) {
   if (!brandSlug) return [];
-  let query = supabaseAdmin
+  let query = supabase
     .from("gallery_items")
     .select("*")
     .eq("brand_slug", brandSlug)
@@ -44,7 +44,7 @@ export async function getGalleryItems(brandSlug: string, category?: string) {
 
 export async function getReservations(brandSlug: string, status?: string) {
   if (!brandSlug) return [];
-  let query = supabaseAdmin
+  let query = supabase
     .from("reservations")
     .select("*")
     .eq("brand_slug", brandSlug)
@@ -60,9 +60,9 @@ export async function getStats(brandSlug: string) {
     return { totalReservations: 0, totalMenuItems: 0, upcomingReservations: 0 };
   }
   const [reservations, menu, upcoming] = await Promise.all([
-    supabaseAdmin.from("reservations").select("*", { count: "exact", head: true }).eq("brand_slug", brandSlug),
-    supabaseAdmin.from("menu_items").select("*", { count: "exact", head: true }).eq("brand_slug", brandSlug).eq("is_available", true),
-    supabaseAdmin.from("reservations").select("*", { count: "exact", head: true })
+    supabase.from("reservations").select("*", { count: "exact", head: true }).eq("brand_slug", brandSlug),
+    supabase.from("menu_items").select("*", { count: "exact", head: true }).eq("brand_slug", brandSlug).eq("is_available", true),
+    supabase.from("reservations").select("*", { count: "exact", head: true })
       .eq("brand_slug", brandSlug)
       .gte("date", new Date().toISOString().split("T")[0]).neq("status", "cancelled"),
   ]);

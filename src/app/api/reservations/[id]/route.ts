@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
   const authHeader = req.headers.get("authorization");
@@ -13,7 +13,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   const validStatuses = ["pending", "confirmed", "rejected", "cancelled"];
   if (!validStatuses.includes(status)) return NextResponse.json({ error: "Invalid status" }, { status: 400 });
 
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await supabase
     .from("reservations")
     .update({ status })
     .eq("id", params.id)

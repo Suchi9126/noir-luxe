@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 function isAdmin(req: NextRequest) {
   return req.headers.get("authorization") === `Bearer ${process.env.ADMIN_SECRET}`;
@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "brand_slug is required" }, { status: 400 });
   }
 
-  let query = supabaseAdmin
+  let query = supabase
     .from("menu_items")
     .select("*")
     .eq("brand_slug", brandSlug)
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
   if (!brandSlug) return NextResponse.json({ error: "brand_slug is required" }, { status: 400 });
   if (!name || !price || !category) return NextResponse.json({ error: "Name, price, category required" }, { status: 400 });
 
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await supabase
     .from("menu_items")
     .insert({ name, description, price: Number(price), category, image_url, tag: tag || "", brand_slug: brandSlug })
     .select()

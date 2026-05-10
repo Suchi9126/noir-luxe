@@ -1,0 +1,83 @@
+export const brand = {
+  slug: "salon-aurora",
+  name: "Salon Aurora",
+  tagline: "Where Beauty Meets Artistry",
+  type: "salon",
+  accentColor: "#c084fc",
+  accentColorDark: "#7e22ce",
+  bgColor: "#120912",
+  phone: "+91 98765 43210",
+  location: "MG Road, Bengaluru",
+  instagram: "@salonaurora",
+  website: "salonaurora.in",
+  offerBanner: "15% off all hair treatments this month — Book now!",
+  heroImage: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=80",
+  galleryImages: [
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+    "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
+    "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80",
+    "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80",
+    "https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80",
+  ],
+  menuHighlights: [
+    {
+      name: "Signature Balayage",
+      desc: "Hand-painted highlights with a luminous finish.",
+      price: "₹2,500+",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
+    },
+    {
+      name: "Keratin Ritual",
+      desc: "Sleek, frizz-free hair with deep nourishment.",
+      price: "₹3,500+",
+      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
+    },
+    {
+      name: "Bridal Glow",
+      desc: "Full bridal artistry with trials and styling.",
+      price: "₹8,000+",
+      image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
+    },
+  ],
+  testimonials: [
+    {
+      name: "Priya S.",
+      text: "Absolutely loved my balayage! The stylists really understood what I wanted.",
+      rating: 5,
+    },
+    {
+      name: "Meera R.",
+      text: "Best bridal makeup I've ever seen. My wedding photos look stunning.",
+      rating: 5,
+    },
+    {
+      name: "Ananya K.",
+      text: "Very hygienic, friendly staff, and the keratin treatment lasted months.",
+      rating: 5,
+    },
+  ],
+  whatsappActions: [
+    { label: "Book appointment", emoji: "💇" },
+    { label: "Ask about services", emoji: "✨" },
+    { label: "Bridal enquiry", emoji: "👰" },
+    { label: "View salon packages", emoji: "💫" },
+  ],
+  stats: [
+    { value: "2000+", label: "Happy Clients" },
+    { value: "12+", label: "Expert Stylists" },
+    { value: "8", label: "Years in Business" },
+    { value: "4.9★", label: "Average Rating" },
+  ],
+  marqueeItems: [
+    "Hair Coloring",
+    "Balayage",
+    "Keratin Treatment",
+    "Bridal Makeup",
+    "Manicure & Pedicure",
+    "Facial",
+    "Threading",
+    "Hair Spa",
+  ],
+};
+export type Brand = typeof brand;

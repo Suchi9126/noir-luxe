@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -12,7 +12,7 @@ html {
 body {
   background: #0A0A0A;
   color: #F5F0E8;
-  font-family: 'Inter', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   overflow-x: hidden;
   cursor: default;
 }
@@ -51,7 +51,7 @@ a { color: inherit; }
   margin: 0;
   padding: 0;
 }
-.brand-page { font-family: "Helvetica Neue", Arial, sans-serif; }
+.brand-page { font-family: "Helvetica Neue", sans-serif; }
 .brand-page a { text-decoration: none; }
 .brand-page img { display: block; max-width: 100%; }
 .brand-page .hov-lift { transition: transform 0.25s, box-shadow 0.25s; }

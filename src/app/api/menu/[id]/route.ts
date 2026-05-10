@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 function isAdmin(req: NextRequest) {
   return req.headers.get("authorization") === `Bearer ${process.env.ADMIN_SECRET}`;
@@ -12,7 +12,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   if (!brandSlug) return NextResponse.json({ error: "brand_slug is required" }, { status: 400 });
   const body = await req.json();
   const { brand_slug: _ignored, ...updates } = body;
-  const { data, error } = await supabaseAdmin
+  const { data, error } = await supabase
     .from("menu_items")
     .update(updates)
     .eq("id", params.id)
@@ -28,7 +28,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
   const { searchParams } = new URL(req.url);
   const brandSlug = searchParams.get("brand_slug");
   if (!brandSlug) return NextResponse.json({ error: "brand_slug is required" }, { status: 400 });
-  const { error } = await supabaseAdmin
+  const { error } = await supabase
     .from("menu_items")
     .update({ is_available: false })
     .eq("id", params.id)

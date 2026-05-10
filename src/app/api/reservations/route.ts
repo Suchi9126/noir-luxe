@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 const TIME_SLOTS = ["7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM"];
 const MAX_PER_SLOT = 6;
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     if (!guest_count || guest_count < 1 || guest_count > 20) return NextResponse.json({ error: "Guest count must be 1–20" }, { status: 400 });
 
     // Check slot capacity
-    const { count } = await supabaseAdmin
+    const { count } = await supabase
       .from("reservations")
       .select("*", { count: "exact", head: true })
       .eq("brand_slug", brandSlug)
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Insert reservation
-    const { data, error } = await supabaseAdmin
+    const { data, error } = await supabase
       .from("reservations")
       .insert({ name: name.trim(), email: email.trim().toLowerCase(), phone: phone.trim(), date, time_slot, guest_count: Number(guest_count), special_requests: special_requests?.trim() || "", brand_slug: brandSlug })
       .select("id, name, date, time_slot, guest_count")
@@ -61,7 +61,7 @@ export async function GET(req: NextRequest) {
   const brandSlug = searchParams.get("brand_slug");
   if (!brandSlug) return NextResponse.json({ error: "brand_slug is required" }, { status: 400 });
 
-  let query = supabaseAdmin
+  let query = supabase
     .from("reservations")
     .select("*", { count: "exact" })
     .eq("brand_slug", brandSlug)
