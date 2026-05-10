@@ -14,6 +14,7 @@ const fallbackItems = [
   { id:"8", src:"https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80", image_url:"https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&q=80", category:"Events", caption:"Wine Pairing Dinner" },
 ];
 
+import AnimatedSection from "@/components/AnimatedSection";
 export default function GalleryClient({ initialItems }: { initialItems: any[] }) {
   const [active, setActive] = useState("All");
   const [lightbox, setLightbox] = useState<number | null>(null);
@@ -45,6 +46,7 @@ export default function GalleryClient({ initialItems }: { initialItems: any[] })
           <p style={{ color:"#C9A96E", fontFamily:"sans-serif", fontSize:"0.7rem", letterSpacing:"0.4em", textTransform:"uppercase", marginBottom:"1rem", opacity: visible ? 1 : 0, transition:"opacity 1s ease 0.3s" }}>Noir & Co.</p>
           <h1 style={{ color:"#F5F0E8", fontFamily:"Cormorant Garamond,Georgia,serif", fontSize:"clamp(3rem,6vw,5rem)", fontWeight:300, opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition:"all 1s ease 0.5s" }}>Gallery</h1>
         </div>
+        </AnimatedSection>
       </section>
 
       {/* Filters */}
@@ -60,6 +62,7 @@ export default function GalleryClient({ initialItems }: { initialItems: any[] })
             }}>{cat}</button>
           ))}
         </div>
+        </AnimatedSection>
       </section>
 
       {/* Masonry */}
@@ -74,10 +77,14 @@ export default function GalleryClient({ initialItems }: { initialItems: any[] })
                   <p style={{ color:"#C9A96E", fontSize:"0.55rem", letterSpacing:"0.2em", textTransform:"uppercase", fontFamily:"sans-serif", marginBottom:"0.2rem" }}>{img.category}</p>
                   <p className="m-caption">{img.caption}</p>
                 </div>
+        </AnimatedSection>
               </div>
+        </AnimatedSection>
             </div>
+        </AnimatedSection>
           ))}
         </div>
+        </AnimatedSection>
       </section>
 
       {/* Lightbox */}
@@ -92,9 +99,11 @@ export default function GalleryClient({ initialItems }: { initialItems: any[] })
             <p style={{ color:"#C9A96E", fontFamily:"sans-serif", fontSize:"0.65rem", letterSpacing:"0.2em", textTransform:"uppercase", marginTop:"1rem" }}>{filtered[lightbox]?.caption}</p>
             <p style={{ color:"rgba(245,240,232,0.25)", fontSize:"0.62rem", fontFamily:"sans-serif", marginTop:"0.4rem" }}>{lightbox+1} / {filtered.length}</p>
           </div>
+        </AnimatedSection>
           <button onClick={e => { e.stopPropagation(); setLightbox(i => i !== null ? Math.min(filtered.length-1, i+1) : null); }}
             style={{ position:"absolute", right:"1rem", top:"50%", transform:"translateY(-50%)", color:"#C9A96E", background:"rgba(0,0,0,0.5)", border:"1px solid rgba(201,169,110,0.3)", width:"44px", height:"44px", fontSize:"1.4rem", cursor:"pointer" }}>›</button>
         </div>
+        </AnimatedSection>
       )}
     </>
   );

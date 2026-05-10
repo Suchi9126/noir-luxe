@@ -10,6 +10,7 @@ const dishes = [
   { name: "Burrata & Heirloom Tomato", category: "Starter", price: "₹950", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" },
 ];
 
+import AnimatedSection from "@/components/AnimatedSection";
 export default function FeaturedDishes() {
   const [visible, setVisible] = useState(false);
   const [hovered, setHovered] = useState<number | null>(null);
@@ -29,6 +30,7 @@ export default function FeaturedDishes() {
           <div style={{ width: "50px", height: "1px", background: "#C9A96E", margin: "0 auto 1.5rem", opacity: visible ? 1 : 0, transition: "opacity 0.8s ease 0.2s" }} />
           <h2 style={{ color: "#F5F0E8", fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 300, opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)", transition: "all 0.8s ease 0.3s" }}>Crafted with Precision</h2>
         </div>
+      </AnimatedSection>
 
         <div className="dishes-grid" style={{ display: "grid", gap: "1.5px", maxWidth: "1200px", margin: "0 auto" }}>
           {dishes.map((dish, i) => (
@@ -40,9 +42,12 @@ export default function FeaturedDishes() {
                 <p style={{ color: "#F5F0E8", fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "1.1rem", fontWeight: 400, marginBottom: "0.3rem", transform: hovered === i ? "translateY(0)" : "translateY(10px)", transition: "transform 0.3s ease" }}>{dish.name}</p>
                 <p style={{ color: "#C9A96E", fontFamily: "sans-serif", fontSize: "0.85rem", opacity: hovered === i ? 1 : 0, transition: "opacity 0.3s ease 0.1s" }}>{dish.price}</p>
               </div>
+      </AnimatedSection>
             </div>
+      </AnimatedSection>
           ))}
         </div>
+      </AnimatedSection>
 
         <div style={{ textAlign: "center", marginTop: "3.5rem" }}>
           <a href="/menu" style={{ color: "#C9A96E", border: "1px solid #C9A96E", padding: "1rem 2.5rem", fontFamily: "sans-serif", fontSize: "0.72rem", letterSpacing: "0.2em", textDecoration: "none", textTransform: "uppercase", display: "inline-block", transition: "all 0.3s ease" }}
@@ -51,6 +56,7 @@ export default function FeaturedDishes() {
             View Full Menu
           </a>
         </div>
+      </AnimatedSection>
       </section>
     </>
   );

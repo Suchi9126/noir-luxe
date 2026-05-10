@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav style={{
+      <nav data-navbar style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
         padding: "1.2rem 2rem",
         background: scrolled || menuOpen ? "rgba(10,10,10,0.97)" : "transparent",

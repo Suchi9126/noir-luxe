@@ -1,5 +1,7 @@
+import AnimatedSection from "@/components/AnimatedSection";
 export default function OfferStrip() {
   return (
+  <AnimatedSection animation="up" className="bg-accent text-ivory text-center py-3 md:py-4 text-sm md:text-base relative overflow-hidden">
     <div style={{
       background: "linear-gradient(90deg, #D4AF37, #b8982e)",
       padding: ".9rem 1rem",
@@ -11,5 +13,6 @@ export default function OfferStrip() {
     }}>
       15% off your first reservation — use code NOIR15 at checkout
     </div>
+  </AnimatedSection>
   );
 }

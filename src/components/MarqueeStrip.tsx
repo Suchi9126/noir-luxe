@@ -2,6 +2,8 @@
 
 const items = ["Fine Dining", "✦", "Private Events", "✦", "Tasting Menus", "✦", "Wine Pairing", "✦", "Chef's Table", "✦", "Bengaluru", "✦", "Michelin Starred", "✦", "Est. 2012", "✦"];
 
+import { useEffect } from "react";
+
 export default function MarqueeStrip() {
   return (
     <div style={{ background: "#C9A96E", overflow: "hidden", padding: "0.9rem 0", whiteSpace: "nowrap" }}>

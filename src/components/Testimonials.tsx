@@ -7,6 +7,7 @@ const fallbackTestimonials = [
   { id: "3", customer_name: "Aiko Tanaka", location: "Tokyo", review: "Noir & Co. has ruined all other restaurants for me. The tasting menu was a journey I did not want to end.", rating: 5 },
 ];
 
+import AnimatedSection from "@/components/AnimatedSection";
 export default function Testimonials({ brandSlug }: { brandSlug?: string }) {
   const [visible, setVisible] = useState(false);
   const [testimonials, setTestimonials] = useState(fallbackTestimonials);
@@ -37,6 +38,7 @@ export default function Testimonials({ brandSlug }: { brandSlug?: string }) {
               What Our Guests Say
             </h2>
           </div>
+        </AnimatedSection>
           <div className="t-grid" style={{ display:"grid", gap:"1.5rem" }}>
             {testimonials.map((t, i) => (
               <div key={t.id} style={{
@@ -47,11 +49,13 @@ export default function Testimonials({ brandSlug }: { brandSlug?: string }) {
                 transition: `all 0.8s ease ${i * 0.15}s`
               }}>
                 <div style={{ color:"rgba(201,169,110,0.15)", fontFamily:"Georgia,serif", fontSize:"5rem", lineHeight:0.8, marginBottom:"1.5rem", userSelect:"none" }}>"</div>
+        </AnimatedSection>
                 <div style={{ display:"flex", marginBottom:"1.25rem" }}>
                   {Array.from({ length: t.rating }).map((_, j) => (
                     <span key={j} style={{ color:"#C9A96E", fontSize:"0.8rem", marginRight:"2px" }}>★</span>
                   ))}
                 </div>
+        </AnimatedSection>
                 <p style={{ color:"rgba(245,240,232,0.65)", fontFamily:"Cormorant Garamond,Georgia,serif", fontSize:"1.05rem", fontStyle:"italic", lineHeight:1.8, marginBottom:"1.75rem" }}>
                   "{t.review}"
                 </p>
@@ -59,10 +63,14 @@ export default function Testimonials({ brandSlug }: { brandSlug?: string }) {
                   <p style={{ color:"#C9A96E", fontFamily:"sans-serif", fontSize:"0.78rem", letterSpacing:"0.05em" }}>{t.customer_name}</p>
                   {t.location && <p style={{ color:"rgba(245,240,232,0.25)", fontFamily:"sans-serif", fontSize:"0.65rem", letterSpacing:"0.1em", marginTop:"0.2rem" }}>{t.location}</p>}
                 </div>
+        </AnimatedSection>
               </div>
+        </AnimatedSection>
             ))}
           </div>
+        </AnimatedSection>
         </div>
+        </AnimatedSection>
       </section>
     </>
   );

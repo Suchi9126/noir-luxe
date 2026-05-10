@@ -30,3 +30,8 @@ export default function RootLayout({
     </html>
   );
 }
+<script dangerouslySetInnerHTML={{
+  __html: `
+    document.documentElement.style.scrollBehavior = "smooth";
+  `
+}} />

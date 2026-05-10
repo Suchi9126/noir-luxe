@@ -2,11 +2,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import AnimatedSection from "@/components/AnimatedSection";
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
-  useEffect(() => { const t = setTimeout(() => setLoaded(true), 100); return () => clearTimeout(t); }, []);
+  useEffect(() => { const t = setTimeout(() => setLoaded(true), 100); return (
+  <AnimatedSection animation="up" className="w-full">) => clearTimeout(t); }, []);
 
   return (
+  <AnimatedSection animation="up" className="w-full">
     <>
       <section style={{ position: "relative", height: "100vh", width: "100%", overflow: "hidden" }}>
         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=80"
@@ -19,7 +22,7 @@ export default function HeroSection() {
             <div style={{ width: "30px", height: "1px", background: "#C9A96E" }} />
             <p style={{ color: "#C9A96E", fontFamily: "sans-serif", fontSize: "0.65rem", letterSpacing: "0.3em", textTransform: "uppercase" }}>Fine Dining · Est. 2012</p>
             <div style={{ width: "30px", height: "1px", background: "#C9A96E" }} />
-          </div>
+          </div>).</AnimatedSection>
 
           <h1 className="hero-title" style={{ color: "#F5F0E8", fontFamily: "Cormorant Garamond, Georgia, serif", fontWeight: 300, letterSpacing: "0.04em", lineHeight: 1.1, marginBottom: "1.5rem", opacity: loaded ? 1 : 0, transform: loaded ? "translateY(0)" : "translateY(30px)", transition: "all 1.2s ease 0.4s", textShadow: "0 2px 40px rgba(0,0,0,0.5)" }}>
             An Experience<br /><em style={{ color: "#C9A96E", fontStyle: "italic" }}>Beyond</em> Dining
@@ -40,18 +43,20 @@ export default function HeroSection() {
               onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(245,240,232,0.4)"; e.currentTarget.style.color = "#F5F0E8"; }}>
               Explore Menu
             </Link>
-          </div>
+          </div>).</AnimatedSection>
 
           <div className="hero-stats" style={{ position: "absolute", bottom: "2.5rem", display: "flex", opacity: loaded ? 1 : 0, transition: "opacity 1s ease 1.2s" }}>
             {[["12", "Years of Excellence"], ["3", "Michelin Stars"], ["200+", "Signature Dishes"]].map(([num, label]) => (
               <div key={label} style={{ textAlign: "center", padding: "0 1.5rem", borderRight: "1px solid rgba(201,169,110,0.15)" }}>
                 <p className="hero-stat-num" style={{ color: "#C9A96E", fontFamily: "Cormorant Garamond, Georgia, serif", fontWeight: 300, letterSpacing: "0.05em" }}>{num}</p>
                 <p style={{ color: "rgba(245,240,232,0.45)", fontFamily: "sans-serif", fontSize: "0.6rem", letterSpacing: "0.18em", textTransform: "uppercase" }}>{label}</p>
-              </div>
+              </div>).</AnimatedSection>
             ))}
-          </div>
-        </div>
+          </div>).</AnimatedSection>
+        </div>).</AnimatedSection>
       </section>
+  </AnimatedSection>
     </>
   );
 }
+

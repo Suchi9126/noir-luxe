@@ -25,13 +25,15 @@ const stats = [
   { value: 40, suffix: "", label: "Seats Only", desc: "Intimate by design" },
 ];
 
+import AnimatedSection from "@/components/AnimatedSection";
 export default function StatsBanner() {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const ob = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.2 });
     if (ref.current) ob.observe(ref.current);
-    return () => ob.disconnect();
+    return (
+  <AnimatedSection animation="up" delay={100} className="max-w-5xl mx-auto mt-12 px-6">) => ob.disconnect();
   }, []);
 
   const c0 = useCountUp(stats[0].value, 1800, visible);
@@ -41,6 +43,7 @@ export default function StatsBanner() {
   const counts = [c0, c1, c2, c3];
 
   return (
+  <AnimatedSection animation="up" delay={100} className="max-w-5xl mx-auto mt-12 px-6">
     <>
       <section ref={ref} className="stats-section" style={{ background: "#0D0D0D", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%, rgba(201,169,110,0.04) 0%, transparent 60%), radial-gradient(circle at 80% 50%, rgba(201,169,110,0.04) 0%, transparent 60%)" }} />
@@ -58,8 +61,10 @@ export default function StatsBanner() {
               <p style={{ color: "#F5F0E8", fontFamily: "sans-serif", fontSize: "0.72rem", letterSpacing: "0.2em", textTransform: "uppercase", margin: "0.75rem 0 0.3rem" }}>{stat.label}</p>
               <p style={{ color: "rgba(245,240,232,0.25)", fontFamily: "sans-serif", fontSize: "0.65rem", letterSpacing: "0.1em" }}>{stat.desc}</p>
             </div>
+  </AnimatedSection>
           ))}
         </div>
+  </AnimatedSection>
       </section>
     </>
   );
